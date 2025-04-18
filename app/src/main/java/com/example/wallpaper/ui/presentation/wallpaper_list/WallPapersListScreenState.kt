@@ -1,6 +1,5 @@
-package com.example.wallpaper.ui.presentation.WallpaperList
+package com.example.wallpaper.ui.presentation.wallpaper_list
 
-import android.net.Uri
 import androidx.compose.runtime.Immutable
 import java.io.File
 
@@ -12,5 +11,8 @@ sealed interface WallPapersListScreenState {
 
     data class WallPapers(
         val videos: List<File>,
+        val isEditModeActive: Boolean = false,
+        val selectedVideos: Set<String> = setOf(),
     ) : WallPapersListScreenState
+
 }
